@@ -80,7 +80,8 @@ yap_require(path
    [VERSION version_spec] 
    [NAME name] 
    [LIBRARIES libs...] 
-   [INCLUDE_DIRECTORIES dirs...])
+   [INCLUDE_DIRECTORIES dirs...]
+   [EXCLUDE_FROM_ALL])
 ```
 
 `yap_require` is used to declare dependency requirements and at the same time retrieve the information
@@ -126,6 +127,9 @@ the `LIBRARIES` argument.
 dependency directory. In this case the variable `<NAME>_INCLUDE_DIRECTORIES` is populated
 with the value of the `INCLUDE_DIRECTORIES` parameter prepended with the path to the dependency
 directory (in the case of multiple directories, each of them is prepended).
+
+`EXCLUDE_FROM_ALL` will ensure that the targets in the included subdirectory are not
+added to the `ALL` target.
 
 ## yap_alias
 
